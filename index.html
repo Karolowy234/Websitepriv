@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enter Access Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: #1a1a1a;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #00ffe744;
+      max-width: 400px;
+      width: 90%;
+    }
+    h1 {
+      color: #00ffe7;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 12px;
+      width: 80%;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      outline: none;
+    }
+    button {
+      background-color: #00ffe7;
+      color: black;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #00ccbb;
+    }
+    p {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🔐 Enter Code</h1>
+  <input type="text" id="codeInput" placeholder="Secret Code">
+  <br/>
+  <button onclick="checkCode()">Enter</button>
+  <p>Contact admin for code</p>
+</div>
+
+<script>
+  function checkCode() {
+    const code = document.getElementById("codeInput").value;
+    const validCode = "PRIVMONEY"; // Change this to your own secret code
+    if (code === validCode) {
+      window.location.href = "dashboard.html";
+    } else {
+      alert("❌ Wrong code. Try again.");
+    }
+  }
+</script>
+
+</body>
+</html>
