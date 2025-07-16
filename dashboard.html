@@ -27,6 +27,21 @@
       -webkit-background-clip: text;
       color: transparent;
       animation: gradientMove 10s ease infinite;
+      position: relative;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: gold;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 10px gold;
     }
 
     @keyframes gradientMove {
@@ -170,6 +185,7 @@
       border-top: 1px solid #222;
     }
 
+    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -180,6 +196,14 @@
         transform: translateY(0);
       }
     }
+
+    [data-lang] {
+      display: none;
+    }
+
+    [data-lang='en'], [data-lang='pl'] {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -187,9 +211,11 @@
   <header>
     <h1>privmoney.website</h1>
     <p class="subtitle">Elite Wealth Building Platform</p>
+    <button class="lang-switch" onclick="switchLang()">🌐 ENG / POL</button>
   </header>
 
-  <section>
+  <!-- English Content -->
+  <section data-lang="en">
     <h2>💸 How to Make Real Money Online (Even If You're Starting From Zero)</h2>
     <p>You don’t need a degree or startup capital to make real money. Here are real, proven ways to build wealth online:</p>
 
@@ -209,7 +235,29 @@
     </div>
   </section>
 
-  <section>
+  <!-- Polish Content -->
+  <section data-lang="pl">
+    <h2>💶 Jak zarabiać w internecie (Nawet jeśli zaczynasz od zera)</h2>
+    <p>Nie potrzebujesz dyplomu ani kapitału startowego, żeby zarabiać realnie przez internet:</p>
+
+    <ol>
+      <li><strong>Marketing partnerski:</strong> Promuj produkty na TikToku, YouTube lub blogach i zarabiaj prowizje za zakupy klientów.</li>
+      <li><strong>Sprzedawanie produktów cyfrowych:</strong> Kursy, szablony, grafiki Canva — sprzedawaj raz i ciesz się pasywnym dochodem.</li>
+      <li><strong>Freelancing:</strong> Wykorzystaj swoje umiejętności – pisarstwo, projektowanie, kodowanie, montaż filmów – i zarabiaj globalnie przez Fiverr, Upwork lub klientów indywidualnych.</li>
+      <li><strong>Zarabianie na YouTube / Shorts / TikTok:</strong> Buduj publiczność i zarabiaj dzięki sponsorom oraz reklamom.</li>
+      <li><strong>Dropshipping / e-commerce:</strong> Sprzedawaj produkty fizyczne bez magazynowania – użyj Shopify i reklam TikTok.</li>
+      <li><strong>Druk na życzenie:</strong> Projektuj koszulki, kubki, plakaty – firmy same drukują i wysyłają.</li>
+      <li><strong>Budowa narzędzi / aplikacji / botów:</strong> Twórz coś przydatnego i pobieraj opłat miesięcznych (np. bity Discord, rozszerzenia Chrome, narzędzia AI).</li>
+    </ol>
+
+    <div class="highlight">
+      <h3>💡 Wskazówka</h3>
+      <p>Zacznij od jednej metody. Opanuj ją. Potem zautomatyzuj ją z użyciem AI, by zarabiać nawet spać.</p>
+    </div>
+  </section>
+
+  <!-- English Section -->
+  <section data-lang="en">
     <h2>🤖 Making Money with AI Like a Pro</h2>
     <p>Top earners use AI to work faster, smarter, and more profitably. Here’s how you can too:</p>
 
@@ -229,7 +277,29 @@
     </div>
   </section>
 
-  <section>
+  <!-- Polish Section -->
+  <section data-lang="pl">
+    <h2>🤖 Zarabianie z wykorzystaniem AI</h2>
+    <p>Najlepsi zarabiający wykorzystują AI, by pracować szybciej, lepiej i bardziej efektywnie. I ty możesz!</p>
+
+    <ul>
+      <li><strong>Wideo na TikToka generowane przez AI:</strong> Użyj narzędzi jak Pictory, Runway ML lub InVideo do tworzenia trendowych filmów.</li>
+      <li><strong>Głosy narracyjne AI:</strong> Stwórz głosy narracyjne w kilka sekund dzięki ElevenLabs lub Play.ht — idealne do YouTube lub podcastów.</li>
+      <li><strong>Kopiowanie tekstów przez AI:</strong> Korzystaj z ChatGPT lub Claude, by pisać e-maile, strony sprzedażowe, scenariusze — w minutach, nie godzinach.</li>
+      <li><strong>Sprzedaż AI-artu:</strong> Twórz sztukę cyfrową z Midjourney lub DALL·E i sprzedawaj ją na Etsy, rynkach NFT lub w mediach społecznościowych.</li>
+      <li><strong>Programowanie z AI:</strong> Przyspiesz pracę z GitHub Copilot lub automatyzuj zadania za pomocą narzędzi typu no-code jak Make.com lub Zapier.</li>
+      <li><strong>Pomoc AI w obsłudze klienta:</strong> Używaj chatbotów do odpowiadania na pytania klientów 24/7 — nawet podczas snu.</li>
+    </ul>
+
+    <div class="highlight">
+      <h3>🎥 Przykład wideo na TikTok</h3>
+      <p>Użyj AI do stworzenia skryptów, głosów narracyjnych, obrazów i gotowych wideo. Dodawaj je na TikTok i zarabiaj na sponsorowaniach.</p>
+      <p><strong>Narzędzia:</strong> Pictory, InVideo, Runway ML, Descript</p>
+    </div>
+  </section>
+
+  <!-- English Section -->
+  <section data-lang="en">
     <h2>📈 Passive Income Ideas That Scale</h2>
     <p>Passive income is money that comes in even when you’re not working. Here’s how to start building it:</p>
 
@@ -248,7 +318,28 @@
     </div>
   </section>
 
-  <section>
+  <!-- Polish Section -->
+  <section data-lang="pl">
+    <h2>📈 Pasywny Dochód w praktyce</h2>
+    <p>Dochód pasywny to pieniądze, które płyną nawet gdy nie pracujesz. Oto jak go budować:</p>
+
+    <ul>
+      <li><strong>Inwestowanie w krypto lub akcje:</strong> Zacznij od małej kwoty, reinwestuj zyski i rozwijaj swój kapitał.</li>
+      <li><strong>Stwórz stronę z członkostwem:</strong> Opłata miesięczna za treści, narzędzia lub dostęp do grupy elitarnych informacji.</li>
+      <li><strong>Wynajem sprzętu:</strong> Wynajmij miejsce w magazynie, samochód, kamery lub nawet nazwy domen.</li>
+      <li><strong>Licencjonowanie własnych materiałów:</strong> Licencjonuj zdjęcia, wideo, muzykę lub kod na stronach takich jak Shutterstock, AudioJungle lub GitHub Sponsors.</li>
+      <li><strong>Stwórz kanał na YouTube:</strong> Gdy osiągniesz monetyzację, stare filmy będą nadal przynosić zyski.</li>
+      <li><strong>Twórz viralne aplikacje:</strong> Zbuduj prostą, ale przydatną aplikację i obserwuj wzrost pobrań.</li>
+    </ul>
+
+    <div class="highlight">
+      <h3>🧠 Myslenie elitarnych</h3>
+      <p>Dochód pasywny to nie tylko pieniądze — to wolność. Każdy zarobiony dolar daje Ci większą kontrolę nad życiem.</p>
+    </div>
+  </section>
+
+  <!-- English Section -->
+  <section data-lang="en">
     <h2>🎥 PrivMoney Video Course</h2>
     <div class="video-course">
 
@@ -276,45 +367,83 @@
     </div>
   </section>
 
-  <!-- New Poland Section -->
-  <section class="cta-poland">
-    <h2>🇵🇱 How You Can Make Money in Poland</h2>
-    <p>To start making money online in Poland, here’s what you need:</p>
+  <!-- Polish Section -->
+  <section data-lang="pl">
+    <h2>🎥 Kurs wideo PrivMoney</h2>
+    <div class="video-course">
 
-    <ul>
-      <li><strong>Bank Account:</strong> Local bank account (e.g., Revolut, mBank, ING) for receiving payments</li>
-      <li><strong>SIM Card:</strong> Local or international SIM for phone verification and cloud services</li>
-      <li><strong>Internet:</strong> Reliable connection to work with AI tools and upload content</li>
-      <li><strong>Skills:</strong> Writing, video editing, design, or coding</li>
-      <li><strong>Tools:</strong> Canva, ChatGPT, Midjourney, Pictory, InVideo, etc.</li>
-      <li><strong>Platform Access:</strong> TikTok, YouTube, Instagram, Fiverr, Upwork, or your own website</li>
-    </ul>
+      <!-- Video 1 -->
+      <div class="video">
+        <h3>1. Jak zarobić 1000$ miesięcznie na wideo AI</h3>
+        <iframe src=" https://www.youtube.com/embed/uz_3dSU8rQo?si=lASGJMLdkBCtJKvV" allowfullscreen></iframe>
+        <p>Naucz się tworzyć wideo AI i publikować je na TikToku lub YouTube Shorts, by mieć pasywny dochód.</p>
+      </div>
 
-    <div class="highlight">
-      <h3>💡 Pro Tip</h3>
-      <p>Use Polish platforms like OLX or Allegro to sell locally. Combine it with global platforms for more income streams.</p>
+      <!-- Video 2 -->
+      <div class="video">
+        <h3>2. Jak dołączyć do TikTok Creativity Program</h3>
+        <iframe src=" https://www.youtube.com/embed/FWzpXcQ9ZAw?si=CRGTk209ePEjmJ3S" allowfullscreen></iframe>
+        <p>Krok po kroku: Jak się zapisać do programu TikTok Creativity Program i zacząć zarabiać na viralowym kontencie.</p>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video">
+        <h3>3. Zrób swój pierwszy biznes online w 7 dni</h3>
+        <iframe src=" https://www.youtube.com/embed/Yh0WmY6IWps?si=xJ-EiCOpYC4bzjQC" allowfullscreen></iframe>
+        <p>Od pomysłu do realizacji – dowiedz się, jak stworzyć źródło dochodu już dziś.</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- Show Me Button -->
-  <section class="cta-poland">
+  <!-- English Section -->
+  <section class="cta-poland" data-lang="en">
     <h2>Show Me How to Make Money in Poland</h2>
-    <p>Want to start making money in Poland? Here's your guide:</p>
+    <p>Want to start making money in Poland? Here's what you need:</p>
     <br/>
     <a href="#how-to-poland">▶️ Show Me</a>
   </section>
 
-  <!-- Join the Inner Circle -->
-  <section class="cta" id="how-to-poland">
+  <!-- Polish Section -->
+  <section class="cta-poland" data-lang="pl">
+    <h2>Pokaż mi, jak zarabiać w Polsce</h2>
+    <p>Chcesz zacząć zarabiać w Polsce? Oto co Ci potrzeba:</p>
+    <br/>
+    <a href="#how-to-poland">▶️ Pokaż Mi</a>
+  </section>
+
+  <!-- English Section -->
+  <section class="cta" id="how-to-poland" data-lang="en">
     <h2>Join the Inner Circle</h2>
     <p>More videos, tools, and strategies are available to members only.</p>
     <br/>
     <a href="#">Apply Now</a>
   </section>
 
-  <footer>
-    &copy; 2025 privmoney.website • Built for those who want more than survival.
-  </footer>
+  <!-- Polish Section -->
+  <section class="cta" id="how-to-poland" data-lang="pl">
+    <h2>Wejdź do Elitarnego Kręgu</h2>
+    <p>Więcej filmów, narzędzi i strategii dostępnych tylko dla członków.</p>
+    <br/>
+    <a href="#">Dołącz teraz</a>
+  </section>
+
+  <footer data-lang="en">© 2025 privmoney.website • Built for those who want more than survival.</footer>
+  <footer data-lang="pl">© 2025 privmoney.website • Stworzone dla osób, które chcą więcej niż przetrwanie.</footer>
+
+  <script>
+    let currentLang = 'en';
+
+    function switchLang() {
+      currentLang = currentLang === 'en' ? 'pl' : 'en';
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === currentLang ? 'block' : 'none';
+      });
+    }
+
+    // Default show English
+    window.onload = () => switchLang();
+  </script>
 
 </body>
 </html>
